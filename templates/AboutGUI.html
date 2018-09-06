@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>About Me</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styler1.css') }}">
+</head>
+
+<body>
+<div class="topnav">
+  <a href="{{ url_for('WeatherGUI') }}">WeatherNews</a>
+  <a href="{{ url_for('DisastersGUI') }}">Disasters</a>
+  <a class="active">About</a>
+</div>
+
+<div style="margin-left: 290px;margin-right: 290px;">
+<img src="{{ url_for('static',filename='Shashank Giri-page-001.jpg') }}" style="border: 1px;border-style: solid;border-color: black;">
+<img src="{{ url_for('static',filename='Shashank Giri-page-002.jpg') }}" style="border: 1px;border-style: solid;border-color: black;">
+<img src="{{ url_for('static',filename='Shashank Giri-page-003.jpg') }}" style="border: 1px;border-style: solid;border-color: black;">
+</div>
+
+</body>
+</html>

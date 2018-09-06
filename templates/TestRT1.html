@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="295; url=http://127.0.0.1:5000/TestRT2" http-equiv='refresh'>
+    <title>RealTimeWeather</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styler1.css') }}">
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active">RealTimeWeather</a>
+  <a href="{{ url_for('DisastersGUI') }}">Disasters</a>
+  <a href="{{ url_for('AboutGUI') }}">About</a>
+    <div class="dropdown mt-7">
+      <form action="/goback" method="post">
+         <input type="submit" value="Stop"/>
+     </form>
+    </div>
+</div>
+
+    <div class="india">
+      <img src="{{ url_for('static',filename='climaticregions.jpg') }}">
+    </div>
+
+
+<div class="thermometer">
+<meter id="meter" value="{{ tempval }}" max="100" min="0" high="75" low="25"></meter>
+<img src="{{ url_for('static',filename='scale.png') }}" style="height:511px; margin-left:69px;margin-top: 22px;">
+    <h1 style="padding-left: 40px; color: {{ color }};">Temp: {{ tempval }}&#8451;</h1>
+</div>
+
+<div class="direction">
+    <img src="{{ url_for('static',filename='dial.png') }}" style="padding-bottom: 47px;">
+    <img src="{{ url_for('static',filename='needler.png') }}" style="margin: 132px;margin-top: 199px;transform: rotate({{ angle }});margin-left: -166px;height: 96px;">
+    <h1 style="padding: 0px;margin-top: 0px;margin-bottom: 50px;margin-left: 410px;margin-top: -50px;padding-left: 430px;">Wind Direction</h1>
+</div>
+
+<div class="Visibility">
+    <img src="{{ url_for('static',filename='eye.gif') }}" style="margin-top: -327px;padding: 179px;float: right;height: 147px;padding-bottom: 0px;">
+    <h1 style="margin-top: -643px;padding: 17px;margin-left: 1523px;">Visibility: {{ visibility }} km</h1>
+</div>
+
+<div class="Sky_and_wind">
+    <img src="{{ url_for('static',filename='Wind.jpg') }}" style="margin-top: 175px;margin-left: 588px;">
+    <h1 style="margin-left: 1367px;margin-top: 0px;">Wind Speed: {{ wind }} Km/h<br>Sky Condition: {{ sky }}</h1>
+</div>
+
+
+</body>
+</html>

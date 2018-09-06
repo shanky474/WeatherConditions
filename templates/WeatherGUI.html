@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styler1.css') }}">
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active">WeatherNews</a>
+  <a href="{{ url_for('DisastersGUI') }}">Disasters</a>
+  <a href="{{ url_for('AboutGUI') }}">About</a>
+    <div class="dropdown mt-7">
+     <form action="/getdetails" method="post">
+          <select name="cities">
+              <option value="Delhi">Delhi</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Pune">Pune</option>
+              <option value="Hyderabad">Hyderabad</option>
+          </select>
+         <input type="date" name="date"
+               placeholder="dd/mm/yyyy" min="2018-08-31"/>
+         <input type="submit" value="Submit" name="ok"/>
+     </form>
+    </div>
+</div>
+
+<div class="india">
+  <img src="{{ url_for('static',filename='climaticregions.jpg') }}">
+</div>
+
+<div class="chart">
+</div>
+
+</body>
+</html>
